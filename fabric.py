@@ -5,9 +5,10 @@ from tqdm.auto import tqdm
 
 def customer_data(out_file, number_of_records):
     print("Generating customer data...")
+    fake = Faker()
+    data_list = []
     for i in tqdm(range(number_of_records)):
-        fake = Faker()
-        data_list = []
+
         columns_list = ['first_name', 'last_name', 'email',
                         'phone_number', 'address', 'city', 'state', 'zipcode', 'country']
         data_list.append([fake.first_name(), fake.last_name(), fake.email(), fake.phone_number(
